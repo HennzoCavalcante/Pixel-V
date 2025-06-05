@@ -9,10 +9,11 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Importa o arquivo javascript para a página -->
+    <script src="./script.js" defer></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-
-
 
 </head>
 
@@ -21,64 +22,83 @@
         <div class="banner">
             <header>
                 <div class="container-grid">
-                    <img src="./img/VersãoPositiva.svg" alt="Logo da mepresa Pixel V">
+                    <img src="./img/VersãoPositiva.svg" alt="Logo da empresa Pixel V">
 
-                    <nav class="menu">
+                    <nav id="menu" class="menu">
                         <a href="">Sobre</a>
                         <a href="">Serviços</a>
                         <a href="">Portfólio</a>
                         <a href="">Contate-nos</a>
+                    </nav>
+
+                    <button onclick="abreFechaMenu()">
+                        <!-- Menu de hamburguer -->
+                        <!-- Icone de barras -->
+                        <svg id="icone-barras" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                        </svg>
+
+                        <!-- Icone de X -->
+                        <svg id="icone-x" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                        </svg>
+                        <!-- ------------------------------------------ -->
+                    </button>
+
+
                 </div>
 
-                </nav>
             </header>
 
             <div class="conteudo-banner">
                 <div class="texto-banner">
-                    <p>"Desing que transforma, marcas que inspiram"</p>
+                    <p>"Design que transforma, Marcas que inspiram"</p>
                     <ul>
                         <li>Vídeo</li>
-                        <li>Fotográfia</li>
+                        <li>Fotografia</li>
                         <li>Aplicativos</li>
                         <li>Redes Sociais</li>
                     </ul>
                 </div>
-
-                <img src="./img/Modelo.png" alt="Modelo da Pixel V">
+                <img src="./img/Modelo.png" alt="Modelo da pixel V">
 
             </div>
         </div>
 
         <section id="sobre" class="container-grid">
-            <img src="./img/sobre.png" alt="Foto de uma pessoa trabalhando no escritório da PIXEL V">
+            <img src="./img/sobre.png" alt="Foto de uma pessoa 
+            trabalhando no escritorio da PIXEL V">
 
             <div class="conteudo-sobre">
                 <div class="titulo">
-
                     <h2>Sobre</h2><span>a nossa agência</span>
-
                 </div>
-
-                <p>Somos uma agência de desing sustentável que une inovação, criatividade e responsabilidade
-                    ambiental para criar marcas autênticas e impactantes. Nosso diferencial é transformar propósito
-                    em identidade visual, ajudando empresas a comunicar usa visão sustentável de forma clara e
-                    envolvente.
+                <p>Somos uma agência de design sustentável que une
+                    inovação, criatividade e responsabilidade
+                    ambiental para criar marcas autênticas e
+                    impactantes. Nosso diferencial é transfomar
+                    propósito em identidade visual, ajundando
+                    empresas a comunicar sua visão sustentável de
+                    forma clara e envolvente.
                 </p>
-
             </div>
 
         </section>
 
         <section id="parallax"></section>
 
-        <section id="serviços" class="container-grid">
+        <section id="servicos" class="container-grid">
 
             <div class="titulo">
                 <span>Nossos</span>
                 <h2>Serviços</h2>
             </div>
 
-            <div class="container-card">
+            <div class="container-cards">
 
                 <div class="card">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
@@ -87,7 +107,7 @@
                         </path>
                     </svg>
                     <h3>Branding</h3>
-                    <p>Identidade Visual, Logotipo, Manual da marca</p>
+                    <p>Identidade Visual, Logotipo, Manual da marca.</p>
                 </div>
 
                 <div class="card">
@@ -97,7 +117,7 @@
                             d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.5 1.5 0 0 0 1 4.01V10c0 .325.078.502.145.602q.105.156.302.254a1.5 1.5 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.76.76 0 0 0 .254-.302 1.5 1.5 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.5 1.5 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145" />
                     </svg>
                     <h3>UI & UX</h3>
-                    <p>Desing e Desenvolvimento da landing page</p>
+                    <p>Design e desenvolvimento de landing pages.</p>
                 </div>
 
                 <div class="card">
@@ -107,7 +127,7 @@
                             d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 75 75 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0m-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233q.27.015.537.036c2.568.189 5.093.744 7.463 1.993zm-9 6.215v-4.13a95 95 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A61 61 0 0 1 4 10.065m-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68 68 0 0 0-1.722-.082z" />
                     </svg>
                     <h3>Marketing</h3>
-                    <p>Redes sociais, Campanha, E-mail marketing</p>
+                    <p>Redes Sociais, Campanhas, E-mail marketing.</p>
                 </div>
 
                 <div class="card">
@@ -119,7 +139,7 @@
                             d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5m0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
                     </svg>
                     <h3>Audiovisual</h3>
-                    <p>Produções audiovisuais, Ensaio fotográficos</p>
+                    <p>Produções Audiovisuais, ensaio fotográfico</p>
                 </div>
 
                 <div class="card">
@@ -138,20 +158,16 @@
                             d="M245.11,60.68c-7.65-13.19-27.84-16.16-58.5-8.66A95.93,95.93,0,0,0,32,128a98,98,0,0,0,.78,12.31C5.09,169,5.49,186,10.9,195.32,16,204.16,26.64,208,40.64,208a124.11,124.11,0,0,0,28.79-4A95.93,95.93,0,0,0,224,128a97.08,97.08,0,0,0-.77-12.25c12.5-13,20.82-25.35,23.65-35.92C248.83,72.51,248.24,66.07,245.11,60.68ZM128,48a80.11,80.11,0,0,1,78,62.2c-17.06,16.06-40.15,32.53-62.07,45.13C116.38,171.14,92.48,181,73.42,186.4A79.94,79.94,0,0,1,128,48ZM24.74,187.29c-1.46-2.51-.65-7.24,2.22-13a79.05,79.05,0,0,1,10.29-15.05,96,96,0,0,0,18,31.32C38,193.46,27.24,191.61,24.74,187.29ZM128,208a79.45,79.45,0,0,1-38.56-9.94,370,370,0,0,0,62.43-28.86c21.58-12.39,40.68-25.82,56.07-39.08A80.07,80.07,0,0,1,128,208ZM231.42,75.69c-1.7,6.31-6.19,13.53-12.63,21.13a95.69,95.69,0,0,0-18-31.35c14.21-2.35,27.37-2.17,30.5,3.24C232.19,70.28,232.24,72.63,231.42,75.69Z">
                         </path>
                     </svg>
-                    <h3>Animação</h3>
-                    <p>Damos visa à sua marca com animação envolventes</p>
+                    <h3>Animações</h3>
+                    <p>Damos vida à sua marca com animações envolventes</p>
                 </div>
 
-                <div class="linha-roxa">
-
-                </div>
+                <div class="linha-roxa"></div>
 
             </div>
-
         </section>
 
-        <section id="Cases">
-
+        <section id="cases">
             <div class="titulo">
                 <h2>Cases</h2><span>de Sucesso</span>
             </div>
@@ -190,7 +206,6 @@
         </section>
 
         <section id="contato">
-
             <div class="titulo">
                 <span>Entre em</span>
                 <h2>Contato</h2>
@@ -198,18 +213,20 @@
 
             <form action="">
                 <div class="campo">
-                    <label for="" class="campo-nome">Qual é o seu nome?</label>
-                    <input type="text" class="campo-nome" placeholder="Digite o seu nome...">
+                    <label for="campo-nome">Qual é o seu nome?</label>
+                    <input type="text" id="campo-nome" placeholder="Digite o seu nome...">
                 </div>
 
                 <div class="campo">
-                    <label for="campo-email"> Qual email podemos te responder?</label>
-                    <input type="password" id="campo-email" placeholder="Digite seu e-mail...">
+                    <label for="campo-email">Em qual e-mail podemos
+                        te responder?</label>
+                    <input type="email" id="campo-email" placeholder="Digite seu e-mail..">
                 </div>
 
                 <div class="campo-descricao">
-                    <label for="campo-texto">
-                        Descreva um pouco de sua empresa, e também o problema que está procurando solucionar.
+                    <label for="campo-texto">Descreva um pouco da sua
+                        empresa, e também o problema que está procurando
+                        solucionar.
                     </label>
                     <textarea id="campo-texto" placeholder="Descreva sua empresa e o problema que enfrenta..." cols="30"
                         rows="10"></textarea>
@@ -217,19 +234,18 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
-
     </main>
 
     <footer>
-        <div class="container-grid">
+        <div class="container-grid roda-pe">
             <img src="./img/VersãoPositiva.svg" alt="Logo da Pixel V">
 
             <div class="redes-sociais">
                 <p>Estamos também nas redes sociais</p>
 
                 <div class="icones-redes">
-                    <a href=""><svg width="50" height="50" viewBox="0 0 50 50" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                    <a href="">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M24.9999 38.6364C32.531 38.6364 38.6363 32.5311 38.6363 25C38.6363 17.4689 32.531 11.3636 24.9999 11.3636C17.4687 11.3636 11.3635 17.4689 11.3635 25C11.3635 32.5311 17.4687 38.6364 24.9999 38.6364ZM24.9999 34.0909C30.0206 34.0909 34.0908 30.0207 34.0908 25C34.0908 19.9792 30.0206 15.9091 24.9999 15.9091C19.9791 15.9091 15.909 19.9792 15.909 25C15.909 30.0207 19.9791 34.0909 24.9999 34.0909Z"
                                 fill="currentColor" />
@@ -242,12 +258,13 @@
                         </svg>
                     </a>
 
-                    <a href=""><svg width="50" height="50" viewBox="0 0 50 50" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                    <a href="">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M50 50H40V32.5024C40 27.7024 37.8825 25.0244 34.085 25.0244C29.9525 25.0244 27.5 27.8149 27.5 32.5024V50H17.5V17.5H27.5V21.1548C27.5 21.1548 30.6375 15.6494 37.7075 15.6494C44.78 15.6494 50 19.9653 50 28.8953V50ZM6.105 12.3022C2.7325 12.3022 0 9.5474 0 6.1499C0 2.7549 2.7325 0 6.105 0C9.475 0 12.2075 2.7549 12.2075 6.1499C12.21 9.5474 9.475 12.3022 6.105 12.3022ZM0 50H12.5V17.5H0V50Z"
                                 fill="currentColor" />
-                        </svg></a>
+                        </svg>
+                    </a>
 
                     <a href="">
                         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -256,16 +273,20 @@
                                 fill="currentColor" />
                         </svg>
                     </a>
-
                 </div>
             </div>
         </div>
     </footer>
 
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
